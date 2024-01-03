@@ -3,11 +3,15 @@
 
 #include <QWidget>
 #include <QMouseEvent>
+
 // #include <QPainter>
 
 namespace Ui {
 class NoteWidget;
 }
+
+// forward declaration
+class MainWindow;
 
 class NoteWidget : public QWidget
 {
@@ -17,8 +21,15 @@ public:
     explicit NoteWidget(QWidget *parent = nullptr);
     ~NoteWidget();
 
+    void initialize_connection(MainWindow* mainWindow);
+
+signals:
+    void new_note_created(NoteWidget* note);
+
 private slots:
     void on_btnClose_clicked();
+
+    void on_btnNewNote_clicked();
 
 private:
     Ui::NoteWidget *ui;

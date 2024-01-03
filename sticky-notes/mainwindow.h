@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QMouseEvent>
+#include "notewidget.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -18,6 +19,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+public slots:
+    void on_newNoteCreated(NoteWidget* note);
+
 private slots:
     void on_btnMinimize_clicked();
 
@@ -25,11 +29,15 @@ private slots:
 
     void on_btnNewNote_clicked();
 
+
+
 private:
     Ui::MainWindow *ui;
     QPoint dragPos;
 
     void mousePressEvent(QMouseEvent* event);
     void mouseMoveEvent(QMouseEvent* event);
+
+    void add_item_to_list();
 };
 #endif // MAINWINDOW_H

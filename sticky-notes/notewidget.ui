@@ -77,8 +77,11 @@ QPushButton#btnDelete:hover {
    <property name="font">
     <font>
      <family>Arial</family>
-     <pointsize>12</pointsize>
+     <pointsize>11</pointsize>
     </font>
+   </property>
+   <property name="placeholderText">
+    <string>Take a note...</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btnClose">
@@ -107,6 +110,9 @@ QPushButton#btnDelete:hover {
      <width>30</width>
      <height>30</height>
     </size>
+   </property>
+   <property name="toolTip">
+    <string>close</string>
    </property>
    <property name="text">
     <string/>

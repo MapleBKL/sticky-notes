@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "notewidget.h"
 #include "listnoteitem.h"
 #include "fixedheightdelegate.h"
 
@@ -10,7 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     ui->listNotes->setItemDelegate(new FixedHeightDelegate(70, ui->listNotes));
-    setWindowFlags(Qt::WindowType::FramelessWindowHint);
+    setWindowFlags(Qt::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
 }
 
@@ -42,17 +41,29 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event)
     event->accept();
 }
 
+void MainWindow::add_item_to_list()
+{
+    ListNoteItem* listNoteItem = new ListNoteItem(this);
+    QListWidgetItem* item = new QListWidgetItem;
+    ui->listNotes->addItem(item);
+    ui->listNotes->setItemWidget(item, listNoteItem);
+}
+
 
 void MainWindow::on_btnNewNote_clicked()
 {
     // create a new note window
     NoteWidget* note = new NoteWidget();
     note->show();
+    note->initialize_connection(this);
 
     // add the corresponding item to the list widget
-    ListNoteItem* listNoteItem = new ListNoteItem(this);
-    QListWidgetItem* item = new QListWidgetItem;
-    ui->listNotes->addItem(item);
-    ui->listNotes->setItemWidget(item, listNoteItem);
+    add_item_to_list();
+}
+
+void MainWindow::on_newNoteCreated(NoteWidget* note)
+{
+    note->initialize_connection(this);
+    add_item_to_list();
 }
 

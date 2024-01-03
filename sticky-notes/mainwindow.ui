@@ -188,6 +188,9 @@ QLineEdit {
       <height>30</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string>minimize</string>
+    </property>
     <property name="styleSheet">
      <string notr="true"/>
     </property>
@@ -203,6 +206,9 @@ QLineEdit {
       <width>30</width>
       <height>30</height>
      </rect>
+    </property>
+    <property name="toolTip">
+     <string>close</string>
     </property>
     <property name="styleSheet">
      <string notr="true"/>
@@ -220,6 +226,9 @@ QLineEdit {
       <height>30</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string>new note</string>
+    </property>
     <property name="styleSheet">
      <string notr="true"/>
     </property>
@@ -236,6 +245,9 @@ QLineEdit {
       <height>30</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string>settings</string>
+    </property>
     <property name="styleSheet">
      <string notr="true"/>
     </property>
@@ -247,7 +259,7 @@ QLineEdit {
     <property name="geometry">
      <rect>
       <x>8</x>
-      <y>32</y>
+      <y>42</y>
       <width>171</width>
       <height>30</height>
      </rect>
