@@ -31,8 +31,13 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
-    <string notr="true">QPushButton {
+    <string notr="true">QWidget {
+	background-color: #EFF1F5;
+}
+
+QPushButton {
 	border: none;
+	background-color: #E6E9EF;
 }
 
 QPushButton#btnNewNote {
@@ -242,7 +247,8 @@ QListWidget {
     </property>
     <property name="styleSheet">
      <string notr="true">QLabel {
-	color: #303446
+	color: #303446;
+	background-color: #E6E9EF;
 }</string>
     </property>
     <property name="text">
