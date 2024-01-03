@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "note.h"
+#include "notewidget.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     setWindowFlags(Qt::WindowType::FramelessWindowHint);
+    setAttribute(Qt::WA_TranslucentBackground);
 }
 
 MainWindow::~MainWindow()
@@ -41,8 +42,7 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event)
 
 void MainWindow::on_btnNewNote_clicked()
 {
-    Note* note = new Note(this);
-    note->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
+    NoteWidget* note = new NoteWidget(this);
     note->show();
 }
 

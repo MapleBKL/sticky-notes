@@ -9,17 +9,24 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    listnoteitem.cpp \
     main.cpp \
     mainwindow.cpp \
-    note.cpp
+    notewidget.cpp \
+    roundedlabel.cpp \
+    roundedwidget.cpp
 
 HEADERS += \
+    listnoteitem.h \
     mainwindow.h \
-    note.h
+    notewidget.h \
+    roundedlabel.h \
+    roundedwidget.h
 
 FORMS += \
+    listnoteitem.ui \
     mainwindow.ui \
-    note.ui
+    notewidget.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

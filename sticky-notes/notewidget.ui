@@ -36,6 +36,7 @@ QTextEdit {
 }
 
 QPushButton {
+	border-radius: 10;
 	border: none;
 }
 
@@ -44,7 +45,6 @@ QPushButton#btnClose {
 }
 
 QPushButton#btnClose:hover {
-	border-radius: 10;
 	background-color: #D20F39;
 	image: url(:/buttons/images/buttons/close-hover.png);
 }
@@ -54,7 +54,6 @@ QPushButton#btnNewNote {
 }
 
 QPushButton#btnNewNote:hover {
-	border-radius: 10;
 	background-color: rgba(239, 241, 245, 150);
 }
 
@@ -63,7 +62,6 @@ QPushButton#btnDelete {
 }
 
 QPushButton#btnDelete:hover {
-	border-radius: 10;
 	background-color: rgba(239, 241, 245, 150);
 }</string>
   </property>
@@ -79,7 +77,7 @@ QPushButton#btnDelete:hover {
    <property name="font">
     <font>
      <family>Arial</family>
-     <pointsize>10</pointsize>
+     <pointsize>12</pointsize>
     </font>
    </property>
   </widget>
