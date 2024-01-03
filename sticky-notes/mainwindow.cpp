@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "note.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -35,5 +36,13 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event)
     move(pos() + event->globalPosition().toPoint() - dragPos);
     dragPos = event->globalPosition().toPoint();
     event->accept();
+}
+
+
+void MainWindow::on_btnNewNote_clicked()
+{
+    Note* note = new Note(this);
+    note->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
+    note->show();
 }
 

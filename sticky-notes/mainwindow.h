@@ -23,6 +23,8 @@ private slots:
 
     void on_btnClose_clicked();
 
+    void on_btnNewNote_clicked();
+
 private:
     Ui::MainWindow *ui;
     QPoint dragPos;

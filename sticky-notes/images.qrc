@@ -6,6 +6,7 @@
         <file>images/buttons/search.png</file>
         <file>images/buttons/settings.png</file>
         <file>images/buttons/close-hover.png</file>
+        <file>images/buttons/trash.png</file>
     </qresource>
     <qresource prefix="/icons">
         <file>images/icons/icon.png</file>
