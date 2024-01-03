@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/buttons">
+        <file>images/buttons/close.png</file>
+        <file>images/buttons/minimize.png</file>
+        <file>images/buttons/plus.png</file>
+        <file>images/buttons/search.png</file>
+        <file>images/buttons/settings.png</file>
+        <file>images/buttons/close-hover.png</file>
+    </qresource>
+    <qresource prefix="/icons">
+        <file>images/icons/icon.png</file>
+    </qresource>
+</RCC>
