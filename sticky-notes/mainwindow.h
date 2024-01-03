@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMouseEvent>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -24,5 +25,9 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    QPoint dragPos;
+
+    void mousePressEvent(QMouseEvent* event);
+    void mouseMoveEvent(QMouseEvent* event);
 };
 #endif // MAINWINDOW_H

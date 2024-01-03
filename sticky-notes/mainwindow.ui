@@ -75,6 +75,7 @@ QPushButton#btnClose:hover {
 
 QPushButton#btnSearch {
 	image: url(:/buttons/images/buttons/search.png);
+	background-color: #EFF1F5;
 }
 
 QPushButton#btnSearch:hover {

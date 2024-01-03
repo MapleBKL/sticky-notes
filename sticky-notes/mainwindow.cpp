@@ -25,3 +25,15 @@ void MainWindow::on_btnClose_clicked()
     this->close();
 }
 
+void MainWindow::mousePressEvent(QMouseEvent *event)
+{
+    dragPos = event->globalPosition().toPoint();
+}
+
+void MainWindow::mouseMoveEvent(QMouseEvent *event)
+{
+    move(pos() + event->globalPosition().toPoint() - dragPos);
+    dragPos = event->globalPosition().toPoint();
+    event->accept();
+}
+
