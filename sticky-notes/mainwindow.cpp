@@ -1,12 +1,15 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "notewidget.h"
+#include "listnoteitem.h"
+#include "fixedheightdelegate.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->listNotes->setItemDelegate(new FixedHeightDelegate(70, ui->listNotes));
     setWindowFlags(Qt::WindowType::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
 }
@@ -42,7 +45,14 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event)
 
 void MainWindow::on_btnNewNote_clicked()
 {
-    NoteWidget* note = new NoteWidget(this);
+    // create a new note window
+    NoteWidget* note = new NoteWidget();
     note->show();
+
+    // add the corresponding item to the list widget
+    ListNoteItem* listNoteItem = new ListNoteItem(this);
+    QListWidgetItem* item = new QListWidgetItem;
+    ui->listNotes->addItem(item);
+    ui->listNotes->setItemWidget(item, listNoteItem);
 }
 

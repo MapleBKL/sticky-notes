@@ -36,7 +36,6 @@ QTextEdit {
 }
 
 QPushButton {
-	border-radius: 10;
 	border: none;
 }
 
@@ -62,7 +61,8 @@ QPushButton#btnDelete {
 }
 
 QPushButton#btnDelete:hover {
-	background-color: rgba(239, 241, 245, 150);
+	background-color: #D20F39;
+	image: url(:/buttons/images/buttons/trash-hover.png)
 }</string>
   </property>
   <widget class="QTextEdit" name="textEditContent">

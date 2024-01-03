@@ -6,7 +6,7 @@ NoteWidget::NoteWidget(QWidget *parent)
     , ui(new Ui::NoteWidget)
 {
     ui->setupUi(this);
-    setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
+    setWindowFlags(Qt::Window | Qt::FramelessWindowHint | Qt::Tool);
 }
 
 NoteWidget::~NoteWidget()
