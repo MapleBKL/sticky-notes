@@ -8,6 +8,8 @@
         <file>images/buttons/close-hover.png</file>
         <file>images/buttons/trash.png</file>
         <file>images/buttons/trash-hover.png</file>
+        <file>images/buttons/pinned.png</file>
+        <file>images/buttons/unpinned.png</file>
     </qresource>
     <qresource prefix="/icons">
         <file>images/icons/icon.png</file>

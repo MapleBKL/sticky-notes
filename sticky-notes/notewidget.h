@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QMouseEvent>
+#include <QTextEdit>
 
 // #include <QPainter>
 
@@ -23,13 +24,19 @@ public:
 
     void initialize_connection(MainWindow* mainWindow);
 
+    QTextEdit* get_content();
+
 signals:
     void new_note_created(NoteWidget* note);
+
+    void content_changed();
 
 private slots:
     void on_btnClose_clicked();
 
     void on_btnNewNote_clicked();
+
+    void on_btnPin_clicked();
 
 private:
     Ui::NoteWidget *ui;

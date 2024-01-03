@@ -18,6 +18,12 @@ NoteWidget::~NoteWidget()
 void NoteWidget::initialize_connection(MainWindow *mainWindow)
 {
     connect(this, &NoteWidget::new_note_created, mainWindow, &MainWindow::on_newNoteCreated);
+    connect(ui->textEditContent, &QTextEdit::textChanged, this, &NoteWidget::content_changed);
+}
+
+QTextEdit *NoteWidget::get_content()
+{
+    return ui->textEditContent;
 }
 
 void NoteWidget::on_btnClose_clicked()
@@ -55,5 +61,27 @@ void NoteWidget::on_btnNewNote_clicked()
 
     // send a signal to notify main window
     emit new_note_created(note);
+}
+
+
+void NoteWidget::on_btnPin_clicked()
+{
+    Qt::WindowFlags flags = this->windowFlags();
+    if (flags & Qt::WindowStaysOnTopHint)
+    {
+        // clear the flag and set checked to false
+        flags &= ~Qt::WindowStaysOnTopHint;
+        ui->btnPin->setChecked(false);
+    }
+    else
+    {
+        // set the flag and set checked to true
+        flags |= Qt::WindowStaysOnTopHint;
+        ui->btnPin->setChecked(true);
+    }
+
+    // update window flags
+    this->setWindowFlags(flags);
+    this->show();
 }
 

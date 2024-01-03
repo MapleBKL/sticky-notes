@@ -41,9 +41,10 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event)
     event->accept();
 }
 
-void MainWindow::add_item_to_list()
+void MainWindow::add_item_to_list(NoteWidget *note)
 {
     ListNoteItem* listNoteItem = new ListNoteItem(this);
+    connect(note, &NoteWidget::content_changed, listNoteItem, &ListNoteItem::on_contentChanged);
     QListWidgetItem* item = new QListWidgetItem;
     ui->listNotes->addItem(item);
     ui->listNotes->setItemWidget(item, listNoteItem);
@@ -58,12 +59,12 @@ void MainWindow::on_btnNewNote_clicked()
     note->initialize_connection(this);
 
     // add the corresponding item to the list widget
-    add_item_to_list();
+    add_item_to_list(note);
 }
 
 void MainWindow::on_newNoteCreated(NoteWidget* note)
 {
     note->initialize_connection(this);
-    add_item_to_list();
+    add_item_to_list(note);
 }
 

@@ -18,6 +18,9 @@ public:
 private:
     Ui::ListNoteItem *ui;
 
+public slots:
+    void on_contentChanged();
+
 protected:
     void enterEvent(QEnterEvent* event) override;
     void leaveEvent(QEvent* event) override;

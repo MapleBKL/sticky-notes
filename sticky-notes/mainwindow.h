@@ -29,8 +29,6 @@ private slots:
 
     void on_btnNewNote_clicked();
 
-
-
 private:
     Ui::MainWindow *ui;
     QPoint dragPos;
@@ -38,6 +36,6 @@ private:
     void mousePressEvent(QMouseEvent* event);
     void mouseMoveEvent(QMouseEvent* event);
 
-    void add_item_to_list();
+    void add_item_to_list(NoteWidget* note);
 };
 #endif // MAINWINDOW_H

@@ -1,5 +1,6 @@
 #include "listnoteitem.h"
 #include "ui_listnoteitem.h"
+#include "notewidget.h"
 
 ListNoteItem::ListNoteItem(QWidget *parent)
     : QWidget(parent)
@@ -14,6 +15,30 @@ ListNoteItem::ListNoteItem(QWidget *parent)
 ListNoteItem::~ListNoteItem()
 {
     delete ui;
+}
+
+void ListNoteItem::on_contentChanged()
+{
+    NoteWidget* content = qobject_cast<NoteWidget*>(sender());
+
+    // If the sticky note contains multiple lines, we only want to show the first two lines
+
+    // extract all the lines
+    QStringList lines = content->get_content()->toPlainText().split('\n');
+
+    // extract the first 2 lines (or 1 line if only 1 line is present)
+    QString headLines = "";
+    if (lines.size() >= 2)
+    {
+        headLines = lines[0] + "\n" + lines[1];
+    }
+    else if (!lines.isEmpty())
+    {
+        headLines = lines[0];
+    }
+
+    // update list item content
+    ui->browserNoteContent->setPlainText(headLines);
 }
 
 void ListNoteItem::enterEvent(QEnterEvent *event)
