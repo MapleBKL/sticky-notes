@@ -30,6 +30,7 @@
 
 QTextEdit {
 	border: none;
+	color: #000000;
 }
 
 QPushButton {
@@ -111,10 +112,12 @@ QMessageBox {
 }
 
 QMessageBox QLabel {
+	color: #303446;
 	background-color: #DCE0E8;
 }
 
 QMessageBox QPushButton {
+	color: #000000;
 	background-color: #DCE0E8;
 }
 </string>

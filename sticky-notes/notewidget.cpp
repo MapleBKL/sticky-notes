@@ -83,8 +83,12 @@ void NoteWidget::on_deleteConfirmed(ListNoteItem *listItem)
 
 void NoteWidget::on_btnNewNote_clicked()
 {
-    // create a new note window
+    // create a new note widget
     NoteWidget* note = new NoteWidget();
+    // position the new note widget right next to the current note widget
+    int x = this->geometry().x() + 20;
+    int y = this->geometry().y() + 20;
+    note->move(x, y);
     note->show();
 
     // send a signal to notify main window
@@ -94,6 +98,7 @@ void NoteWidget::on_btnNewNote_clicked()
 
 void NoteWidget::on_btnPin_clicked()
 {
+    // pin the note widget to the top level, above all other windows
     Qt::WindowFlags flags = this->windowFlags();
     if (flags & Qt::WindowStaysOnTopHint)
     {
@@ -166,8 +171,9 @@ void NoteWidget::on_btnColor_clicked()
     ColorPicker* colorPicker = new ColorPicker(this);
 
     // move the colorpicker window to the appropriate position
-    int x = this->geometry().x() + 140;
-    int y = this->geometry().y() + 30;
+    // center the colorpicker
+    int x = this->geometry().x() + 70;
+    int y = this->geometry().y() + 110;
     colorPicker->move(x, y);
     colorPicker->show();
     connect(colorPicker, &ColorPicker::new_color_picked, this, &NoteWidget::setColor);

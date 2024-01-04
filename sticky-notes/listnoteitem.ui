@@ -43,20 +43,19 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QWidget#ListNoteItem {
+   <string notr="true">QWidget {
 	border: 1px solid;
 	border-color: #B5BFE2;
-	background-color: #DCE0E8;
+	background-color: #E6E9EF;
 }
 
 QTextBrowser {
 	border: none;
-	background-color: #DCE0E8;
+color: #000000;
 }
 
 QPushButton#btnDelete {
 	border: none;
-	background-color: #DCE0E8;
 	image: url(:/buttons/images/buttons/trash.png)
 }
 
@@ -67,7 +66,6 @@ QPushButton#btnDelete:hover {
 
 QPushButton#btnOpen {
 	border: none;
-		background-color: #DCE0E8;
 	image: url(:/buttons/images/buttons/open.png);
 }
 
@@ -77,7 +75,6 @@ QPushButton#btnOpen:hover {
 
 QLabel {
 	border: none;
-	background-color: #DCE0E8;
 	color: #939AB7;
 }
 
@@ -91,6 +88,7 @@ QMessageBox QLabel {
 }
 
 QMessageBox QPushButton {
+	color: #000000;
 	background-color: #DCE0E8;
 }</string>
   </property>

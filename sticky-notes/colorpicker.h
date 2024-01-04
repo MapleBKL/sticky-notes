@@ -47,6 +47,8 @@ private slots:
 
 private:
     Ui::ColorPicker *ui;
+
+    void delete_and_return_focus();
 };
 
 #endif // COLORPICKER_H
