@@ -44,10 +44,18 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event)
 void MainWindow::add_item_to_list(NoteWidget *note)
 {
     ListNoteItem* listNoteItem = new ListNoteItem(this);
+
+    note->set_list_item(listNoteItem);
     connect(note, &NoteWidget::content_changed, listNoteItem, &ListNoteItem::on_contentChanged);
+
     QListWidgetItem* item = new QListWidgetItem;
     ui->listNotes->addItem(item);
     ui->listNotes->setItemWidget(item, listNoteItem);
+    listNoteItem->setListWidgetItem(item);
+
+    connect(listNoteItem, &ListNoteItem::delete_confirmed, this, &MainWindow::on_deleteConfirmed);
+    connect(listNoteItem, &ListNoteItem::delete_confirmed, note, &NoteWidget::on_deleteConfirmed);
+    connect(note, &NoteWidget::delete_confirmed, this, &MainWindow::on_deleteConfirmed);
 }
 
 
@@ -60,6 +68,12 @@ void MainWindow::on_btnNewNote_clicked()
 
     // add the corresponding item to the list widget
     add_item_to_list(note);
+}
+
+void MainWindow::on_deleteConfirmed(ListNoteItem *listItem)
+{
+    ui->listNotes->takeItem(ui->listNotes->row(listItem->getListWidgetItem()));
+    listItem->deleteLater();
 }
 
 void MainWindow::on_newNoteCreated(NoteWidget* note)

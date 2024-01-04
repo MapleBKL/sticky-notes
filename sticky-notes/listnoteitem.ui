@@ -43,19 +43,18 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QWidget {
+   <string notr="true">QWidget#ListNoteItem {
 	background-color: #DCE0E8;
 }
 
 QTextBrowser {
 	border: none;
-}
-
-QPushButton {
-	border: none;
+	background-color: #DCE0E8;
 }
 
 QPushButton#btnDelete {
+	border: none;
+	background-color: #DCE0E8;
 	image: url(:/buttons/images/buttons/trash.png)
 }
 
@@ -64,8 +63,33 @@ QPushButton#btnDelete:hover {
 	image: url(:/buttons/images/buttons/trash-hover.png)
 }
 
+QPushButton#btnOpen {
+	border: none;
+		background-color: #DCE0E8;
+	image: url(:/buttons/images/buttons/open.png);
+}
+
+QPushButton#btnOpen:hover {
+	background-color: rgba(239, 241, 245, 150);
+}
+
 QLabel {
+	border: none;
+	background-color: #DCE0E8;
 	color: #939AB7;
+}
+
+QMessageBox {
+	background-color: #DCE0E8;
+}
+
+QMessageBox QLabel {
+	color: #303446;
+	background-color: #DCE0E8;
+}
+
+QMessageBox QPushButton {
+	background-color: #DCE0E8;
 }</string>
   </property>
   <widget class="QTextBrowser" name="browserNoteContent">
@@ -115,6 +139,31 @@ QLabel {
    <property name="geometry">
     <rect>
      <x>260</x>
+     <y>40</y>
+     <width>30</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnOpen">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
      <y>40</y>
      <width>30</width>
      <height>30</height>

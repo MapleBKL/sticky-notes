@@ -7,7 +7,7 @@ NoteWidget::NoteWidget(QWidget *parent)
     , ui(new Ui::NoteWidget)
 {
     ui->setupUi(this);
-    setWindowFlags(Qt::FramelessWindowHint | Qt::Tool);
+    setWindowFlags(Qt::SubWindow | Qt::FramelessWindowHint);
 }
 
 NoteWidget::~NoteWidget()
@@ -29,6 +29,7 @@ QTextEdit *NoteWidget::get_content()
 void NoteWidget::on_btnClose_clicked()
 {
     this->close();
+    this->deleteLater();
 }
 
 void NoteWidget::mousePressEvent(QMouseEvent *event)
@@ -41,6 +42,18 @@ void NoteWidget::mouseMoveEvent(QMouseEvent *event)
     move(pos() + event->globalPosition().toPoint() - dragPos);
     dragPos = event->globalPosition().toPoint();
     event->accept();
+}
+
+void NoteWidget::set_list_item(ListNoteItem *listItem)
+{
+    this->listItem = listItem;
+}
+
+void NoteWidget::on_deleteConfirmed(ListNoteItem *listItem)
+{
+    Q_UNUSED(listItem);
+    this->close();
+    this->deleteLater();
 }
 
 // void Note::paintEvent(QPaintEvent *event)
@@ -83,5 +96,17 @@ void NoteWidget::on_btnPin_clicked()
     // update window flags
     this->setWindowFlags(flags);
     this->show();
+}
+
+
+void NoteWidget::on_btnDelete_clicked()
+{
+    auto decision = QMessageBox::question(this, "", "Delete this note?");
+    if (decision == QMessageBox::Yes)
+    {
+        emit delete_confirmed(listItem);
+        this->close();
+        this->deleteLater();
+    }
 }
 

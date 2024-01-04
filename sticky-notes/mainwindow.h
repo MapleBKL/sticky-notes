@@ -29,6 +29,8 @@ private slots:
 
     void on_btnNewNote_clicked();
 
+    void on_deleteConfirmed(ListNoteItem* listItem);
+
 private:
     Ui::MainWindow *ui;
     QPoint dragPos;

@@ -8,13 +8,24 @@ ListNoteItem::ListNoteItem(QWidget *parent)
 {
     ui->setupUi(this);
     setAttribute(Qt::WA_StyledBackground, true);
-    // the delete button is inititally hidden
+    // the open and delete buttons are inititally hidden
+    ui->btnOpen->setVisible(false);
     ui->btnDelete->setVisible(false);
 }
 
 ListNoteItem::~ListNoteItem()
 {
     delete ui;
+}
+
+void ListNoteItem::setListWidgetItem(QListWidgetItem *item)
+{
+    this->item = item;
+}
+
+QListWidgetItem *ListNoteItem::getListWidgetItem()
+{
+    return this->item;
 }
 
 void ListNoteItem::on_contentChanged()
@@ -44,11 +55,23 @@ void ListNoteItem::on_contentChanged()
 void ListNoteItem::enterEvent(QEnterEvent *event)
 {
     Q_UNUSED(event);
+    ui->btnOpen->setVisible(true);
     ui->btnDelete->setVisible(true);
 }
 
 void ListNoteItem::leaveEvent(QEvent *event)
 {
     Q_UNUSED(event);
+        ui->btnOpen->setVisible(false);
     ui->btnDelete->setVisible(false);
 }
+
+void ListNoteItem::on_btnDelete_clicked()
+{
+    auto decision = messageBox.question(this, "", "Delete this note?");
+    if (decision == QMessageBox::Yes)
+    {
+        emit delete_confirmed(this);
+    }
+}
+

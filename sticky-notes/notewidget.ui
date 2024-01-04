@@ -75,7 +75,44 @@ QPushButton#btnPin:hover {
 
 QPushButton#btnPin:checked {
 	image: url(:/buttons/images/buttons/pinned.png);
-}</string>
+}
+
+QPushButton#btnBold {
+	image: url(:/buttons/images/buttons/bold.png)
+}
+
+QPushButton#btnBold:hover {
+	background-color: rgba(239, 241, 245, 150);
+}
+
+QPushButton#btnItalic {
+	image: url(:/buttons/images/buttons/italic.png)
+}
+
+QPushButton#btnItalic:hover {
+	background-color: rgba(239, 241, 245, 150);
+}
+
+QPushButton#btnUnderline {
+	image: url(:/buttons/images/buttons/underline.png)
+}
+
+QPushButton#btnUnderline:hover {
+	background-color: rgba(239, 241, 245, 150);
+}
+
+QMessageBox {
+	background-color: #DCE0E8;
+}
+
+QMessageBox QLabel {
+	background-color: #DCE0E8;
+}
+
+QMessageBox QPushButton {
+	background-color: #DCE0E8;
+}
+</string>
   </property>
   <widget class="QTextEdit" name="textEditContent">
    <property name="geometry">
@@ -227,6 +264,117 @@ QPushButton#btnPin:checked {
    </property>
    <property name="toolTip">
     <string>close</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnBold">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>270</y>
+     <width>30</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="toolTip">
+    <string>delete note</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnItalic">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>270</y>
+     <width>30</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="toolTip">
+    <string>delete note</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnUnderline">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>270</y>
+     <width>30</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="toolTip">
+    <string>delete note</string>
    </property>
    <property name="text">
     <string/>

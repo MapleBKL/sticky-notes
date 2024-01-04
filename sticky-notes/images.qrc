@@ -10,6 +10,10 @@
         <file>images/buttons/trash-hover.png</file>
         <file>images/buttons/pinned.png</file>
         <file>images/buttons/unpinned.png</file>
+        <file>images/buttons/open.png</file>
+        <file>images/buttons/bold.png</file>
+        <file>images/buttons/italic.png</file>
+        <file>images/buttons/underline.png</file>
     </qresource>
     <qresource prefix="/icons">
         <file>images/icons/icon.png</file>
