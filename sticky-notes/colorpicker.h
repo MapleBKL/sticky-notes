@@ -7,7 +7,7 @@
 #define ROSEWATER "#F4DBD6"
 #define PINK      "#F5C2E7"
 #define GREEN     "#A6E3A1"
-#define SKY       "#89DCEB"
+#define SKY       "#BBEAF2"
 #define TEAL      "#94E2D5"
 #define LAVENDER  "#B4BEFE"
 #define YELLOW    "#F8FFAB"

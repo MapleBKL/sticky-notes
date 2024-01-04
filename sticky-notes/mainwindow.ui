@@ -32,12 +32,15 @@
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
     <string notr="true">QWidget {
-	background-color: #CAD3F5;
+	background-color: #DCE0E8;
+}
+
+QLabel#labelName {
+	color: #303446;
 }
 
 QPushButton {
 	border: none;
-	background-color: #CAD3F5;
 }
 
 QPushButton#btnNewNote {
@@ -91,7 +94,7 @@ QListWidget {
 QLineEdit {
 	border: none;
 	border-radius: 10;
-	background-color: #E6E9EF;
+	background-color: #CCD0DA;
 }</string>
    </property>
    <widget class="QLabel" name="labelTop">
@@ -122,9 +125,7 @@ QLineEdit {
      </size>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLabel {
-	background-color: #CAD3F5;
-}</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string/>
@@ -273,10 +274,7 @@ QLineEdit {
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLabel {
-	color: #303446;
-	background-color: #CAD3F5;
-}</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Sticky Notes</string>

@@ -44,6 +44,8 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget#ListNoteItem {
+	border: 1px solid;
+	border-color: #B5BFE2;
 	background-color: #DCE0E8;
 }
 
@@ -117,8 +119,8 @@ QMessageBox QPushButton {
   <widget class="QLabel" name="labelDate">
    <property name="geometry">
     <rect>
-     <x>225</x>
-     <y>0</y>
+     <x>224</x>
+     <y>1</y>
      <width>60</width>
      <height>16</height>
     </rect>
@@ -138,8 +140,8 @@ QMessageBox QPushButton {
   <widget class="QPushButton" name="btnDelete">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>50</y>
+     <x>259</x>
+     <y>49</y>
      <width>30</width>
      <height>30</height>
     </rect>
@@ -163,8 +165,8 @@ QMessageBox QPushButton {
   <widget class="QPushButton" name="btnOpen">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>50</y>
+     <x>229</x>
+     <y>49</y>
      <width>30</width>
      <height>30</height>
     </rect>

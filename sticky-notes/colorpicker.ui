@@ -30,12 +30,6 @@
 	background-color: #737944;
 }
 
-QWidget#ColorPicker {
-	border: 3px solid;
-	border-color: #303446;
-	background-color: #EFF1F5;
-}
-
 QPushButton {
 	border: none;
 }
@@ -58,7 +52,7 @@ QPushButton#btnGreen {
 }
 
 QPushButton#btnSky {
-	background-color: #89DCEB;
+	background-color: #BBEAF2;
 }
 
 QPushButton#btnTeal {
