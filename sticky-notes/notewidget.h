@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QMouseEvent>
 #include <QTextEdit>
+#include <QFocusEvent>
 #include "listnoteitem.h"
 
 // #include <QPainter>
@@ -56,11 +57,13 @@ private slots:
 
     void on_btnColor_clicked();
 
+    void toggleButtonsVisibility(QWindow* currWindow);
+
 private:
     Ui::NoteWidget *ui;
-    QPoint dragPos;
-    QString currentColor;
-    ListNoteItem* listItem;
+    QPoint         dragPos;       // for hold and drag
+    QString        currentColor;  // color theme of the note widget
+    ListNoteItem*  listItem;      // the list item in main window corresponding to the note widget
 
     void mousePressEvent(QMouseEvent* event) override;
     void mouseMoveEvent(QMouseEvent* event) override;

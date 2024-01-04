@@ -3,13 +3,14 @@
 #include "mainwindow.h"
 #include "colorpicker.h"
 #include <QHBoxLayout>
+#include <QApplication>
 
 NoteWidget::NoteWidget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::NoteWidget)
 {
     ui->setupUi(this);
-    setWindowFlags(Qt::SubWindow | Qt::FramelessWindowHint);
+    setWindowFlags(Qt::Window | Qt::FramelessWindowHint | Qt::Tool);
 }
 
 NoteWidget::~NoteWidget()
@@ -21,6 +22,7 @@ void NoteWidget::initialize_connection(MainWindow *mainWindow)
 {
     connect(this, &NoteWidget::new_note_created, mainWindow, &MainWindow::on_newNoteCreated);
     connect(ui->textEditContent, &QTextEdit::textChanged, this, &NoteWidget::content_changed);
+    connect(qApp, &QGuiApplication::focusWindowChanged, this, &NoteWidget::toggleButtonsVisibility);
 }
 
 QTextEdit *NoteWidget::get_content()
@@ -169,5 +171,31 @@ void NoteWidget::on_btnColor_clicked()
     colorPicker->move(x, y);
     colorPicker->show();
     connect(colorPicker, &ColorPicker::new_color_picked, this, &NoteWidget::setColor);
+}
+
+void NoteWidget::toggleButtonsVisibility(QWindow *currWindow)
+{
+    if (currWindow == this->windowHandle())
+    {
+        ui->btnClose->show();
+        ui->btnPin->show();
+        ui->btnColor->show();
+        ui->btnNewNote->show();
+        ui->btnDelete->show();
+        ui->btnBold->show();
+        ui->btnItalic->show();
+        ui->btnUnderline->show();
+    }
+    else
+    {
+        ui->btnClose->hide();
+        ui->btnPin->hide();
+        ui->btnColor->hide();
+        ui->btnNewNote->hide();
+        ui->btnDelete->hide();
+        ui->btnBold->hide();
+        ui->btnItalic->hide();
+        ui->btnUnderline->hide();
+    }
 }
 
