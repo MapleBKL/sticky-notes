@@ -61,9 +61,16 @@ void MainWindow::add_item_to_list(NoteWidget *note)
 
 void MainWindow::on_btnNewNote_clicked()
 {
-    // create a new note window
+    // create a new note widget
     NoteWidget* note = new NoteWidget();
+
+    // set position for the new note
+    // move it to the right of the main window
+    int x = this->geometry().x() + 310;
+    int y = this->geometry().y();
+    note->move(x, y);
     note->show();
+
     note->initialize_connection(this);
 
     // add the corresponding item to the list widget

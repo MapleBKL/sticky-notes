@@ -263,7 +263,7 @@ QMessageBox QPushButton {
     </size>
    </property>
    <property name="toolTip">
-    <string>close</string>
+    <string>pin on top layer</string>
    </property>
    <property name="text">
     <string/>

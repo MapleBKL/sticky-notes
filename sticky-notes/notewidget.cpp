@@ -113,6 +113,7 @@ void NoteWidget::on_btnDelete_clicked()
 
 void NoteWidget::on_btnBold_clicked(bool checked)
 {
+    // set the selected text to bold
     QTextCursor cursor = ui->textEditContent->textCursor();
     QTextCharFormat format = cursor.charFormat();
     format.setFontWeight(checked ? QFont::Bold : QFont::Normal);
@@ -123,6 +124,7 @@ void NoteWidget::on_btnBold_clicked(bool checked)
 
 void NoteWidget::on_btnItalic_clicked(bool checked)
 {
+        // set the selected text to italic
     QTextCursor cursor = ui->textEditContent->textCursor();
     QTextCharFormat format = cursor.charFormat();
     format.setFontItalic(checked);
@@ -133,6 +135,7 @@ void NoteWidget::on_btnItalic_clicked(bool checked)
 
 void NoteWidget::on_btnUnderline_clicked(bool checked)
 {
+        // set the selected text to underline
     QTextCursor cursor = ui->textEditContent->textCursor();
     QTextCharFormat format = cursor.charFormat();
     format.setFontUnderline(checked);
