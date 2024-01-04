@@ -6,6 +6,7 @@ ColorPicker::ColorPicker(QWidget *parent)
     , ui(new Ui::ColorPicker)
 {
     ui->setupUi(this);
+    setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
 }
 
 ColorPicker::~ColorPicker()
