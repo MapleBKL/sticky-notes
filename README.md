@@ -1,6 +1,6 @@
 > A desktop sticky notes application developed in C++ with [Qt-Widget](https://www.qt.io/download-open-source).
 
-![illustration](/home/yinfenglu/Documents/code/projects/sticky-notes/demo-images/illustration.png)
+![illustration](https://github.com/MapleBKL/sticky-notes/blob/master/demo-images/illustration.png)
 
 # Background
 
