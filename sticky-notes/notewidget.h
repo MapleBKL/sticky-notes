@@ -54,14 +54,19 @@ private slots:
 
     void on_btnUnderline_clicked(bool checked);
 
+    void on_btnColor_clicked();
+
 private:
     Ui::NoteWidget *ui;
     QPoint dragPos;
+    QString currentColor;
     ListNoteItem* listItem;
 
     void mousePressEvent(QMouseEvent* event) override;
     void mouseMoveEvent(QMouseEvent* event) override;
     // void paintEvent(QPaintEvent* event) override;
+
+    void setColor(QString newColor);
 };
 
 #endif // NOTEWIDGET_H

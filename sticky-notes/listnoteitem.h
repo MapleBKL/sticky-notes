@@ -23,7 +23,6 @@ public:
 private:
     Ui::ListNoteItem* ui;
     QListWidgetItem* item;
-    QMessageBox messageBox;
 
 signals:
     void delete_confirmed(ListNoteItem* item);

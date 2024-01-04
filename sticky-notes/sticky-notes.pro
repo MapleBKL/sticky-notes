@@ -9,6 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    colorpicker.cpp \
     fixedheightdelegate.cpp \
     listnoteitem.cpp \
     main.cpp \
@@ -18,6 +19,7 @@ SOURCES += \
     roundedwidget.cpp
 
 HEADERS += \
+    colorpicker.h \
     fixedheightdelegate.h \
     listnoteitem.h \
     mainwindow.h \
@@ -26,6 +28,7 @@ HEADERS += \
     roundedwidget.h
 
 FORMS += \
+    colorpicker.ui \
     listnoteitem.ui \
     mainwindow.ui \
     notewidget.ui

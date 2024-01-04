@@ -26,13 +26,10 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QWidget {
-	background-color: #F8FFAB;
-}
+   <string notr="true">QWidget { background-color: #F8FFAB; }
 
 QTextEdit {
 	border: none;
-	background-color: #F8FFAB;
 }
 
 QPushButton {
@@ -98,6 +95,14 @@ QPushButton#btnUnderline {
 }
 
 QPushButton#btnUnderline:hover {
+	background-color: rgba(239, 241, 245, 150);
+}
+
+QPushButton#btnColor {
+	image: url(:/buttons/images/buttons/color.png)
+}
+
+QPushButton#btnColor:hover {
 	background-color: rgba(239, 241, 245, 150);
 }
 
@@ -300,7 +305,7 @@ QMessageBox QPushButton {
     </size>
    </property>
    <property name="toolTip">
-    <string>delete note</string>
+    <string>bold</string>
    </property>
    <property name="text">
     <string/>
@@ -337,7 +342,7 @@ QMessageBox QPushButton {
     </size>
    </property>
    <property name="toolTip">
-    <string>delete note</string>
+    <string>italic</string>
    </property>
    <property name="text">
     <string/>
@@ -374,7 +379,44 @@ QMessageBox QPushButton {
     </size>
    </property>
    <property name="toolTip">
-    <string>delete note</string>
+    <string>underline</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnColor">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>0</y>
+     <width>30</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="toolTip">
+    <string>change color</string>
    </property>
    <property name="text">
     <string/>

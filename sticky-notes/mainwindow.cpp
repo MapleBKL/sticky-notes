@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->listNotes->setItemDelegate(new FixedHeightDelegate(70, ui->listNotes));
+    ui->listNotes->setItemDelegate(new FixedHeightDelegate(80, ui->listNotes));
     setWindowFlags(Qt::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
 }

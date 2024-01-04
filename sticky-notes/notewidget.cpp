@@ -1,6 +1,8 @@
 #include "notewidget.h"
 #include "ui_notewidget.h"
 #include "mainwindow.h"
+#include "colorpicker.h"
+#include <QHBoxLayout>
 
 NoteWidget::NoteWidget(QWidget *parent)
     : QWidget(parent)
@@ -42,6 +44,17 @@ void NoteWidget::mouseMoveEvent(QMouseEvent *event)
     move(pos() + event->globalPosition().toPoint() - dragPos);
     dragPos = event->globalPosition().toPoint();
     event->accept();
+}
+
+void NoteWidget::setColor(QString newColor)
+{
+    // retrieve the current style sheet and split into lines
+    QStringList currentStyleSheet = this->styleSheet().split('\n');
+    // remove the first line (old background color)
+    currentStyleSheet.removeFirst();
+    currentStyleSheet.prepend(QString("QWidget { background-color: %1 }").arg(newColor));
+    QString newStyleSheet = currentStyleSheet.join('\n');
+    this->setStyleSheet(newStyleSheet);
 }
 
 void NoteWidget::set_list_item(ListNoteItem *listItem)
@@ -141,5 +154,12 @@ void NoteWidget::on_btnUnderline_clicked(bool checked)
     format.setFontUnderline(checked);
     cursor.mergeCharFormat(format);
     ui->textEditContent->setTextCursor(cursor);
+}
+
+void NoteWidget::on_btnColor_clicked()
+{
+    ColorPicker* colorPicker = new ColorPicker(this);
+    colorPicker->show();
+    connect(colorPicker, &ColorPicker::new_color_picked, this, &NoteWidget::setColor);
 }
 

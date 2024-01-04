@@ -68,7 +68,7 @@ void ListNoteItem::leaveEvent(QEvent *event)
 
 void ListNoteItem::on_btnDelete_clicked()
 {
-    auto decision = messageBox.question(this, "", "Delete this note?");
+    auto decision = QMessageBox::question(this, "", "Delete this note?");
     if (decision == QMessageBox::Yes)
     {
         emit delete_confirmed(this);
