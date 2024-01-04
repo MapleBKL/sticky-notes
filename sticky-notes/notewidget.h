@@ -48,6 +48,12 @@ private slots:
 
     void on_btnDelete_clicked();
 
+    void on_btnBold_clicked(bool checked);
+
+    void on_btnItalic_clicked(bool checked);
+
+    void on_btnUnderline_clicked(bool checked);
+
 private:
     Ui::NoteWidget *ui;
     QPoint dragPos;

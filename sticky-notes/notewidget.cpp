@@ -110,3 +110,33 @@ void NoteWidget::on_btnDelete_clicked()
     }
 }
 
+
+void NoteWidget::on_btnBold_clicked(bool checked)
+{
+    QTextCursor cursor = ui->textEditContent->textCursor();
+    QTextCharFormat format = cursor.charFormat();
+    format.setFontWeight(checked ? QFont::Bold : QFont::Normal);
+    cursor.mergeCharFormat(format);
+    ui->textEditContent->setTextCursor(cursor);
+}
+
+
+void NoteWidget::on_btnItalic_clicked(bool checked)
+{
+    QTextCursor cursor = ui->textEditContent->textCursor();
+    QTextCharFormat format = cursor.charFormat();
+    format.setFontItalic(checked);
+    cursor.mergeCharFormat(format);
+    ui->textEditContent->setTextCursor(cursor);
+}
+
+
+void NoteWidget::on_btnUnderline_clicked(bool checked)
+{
+    QTextCursor cursor = ui->textEditContent->textCursor();
+    QTextCharFormat format = cursor.charFormat();
+    format.setFontUnderline(checked);
+    cursor.mergeCharFormat(format);
+    ui->textEditContent->setTextCursor(cursor);
+}
+
