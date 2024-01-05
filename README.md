@@ -40,10 +40,15 @@ This section lists all the implemented features. For other features I plan to im
 This section lists unfinished tasks and additional features I plan to implement later.
 
 - Automatically save notes to a database, so that they can be re-opened later.
+  
 - Search for note content.
+  
 - Basic settings (e.g. skip dialog before deleting, open all notes from last time at startup) that can be changed in the central panel.
+  
 - Option to sort the list in the central panel (by created time, modified time, etc.).
+  
 - Drag and re-order the list in the central panel.
+  
 - Dark theme for the central panel, and a button to switch between light and dark themes.
 
 # Known issues
