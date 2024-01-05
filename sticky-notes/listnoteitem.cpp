@@ -21,11 +21,14 @@ ListNoteItem::~ListNoteItem()
     delete ui;
 }
 
+// QListWidget must be used with QListWidgetItems, so we need a dummy
+// item to hold the customized ListNoteItem
 void ListNoteItem::setListWidgetItem(QListWidgetItem *item)
 {
     this->item = item;
 }
 
+// return the dummy item
 QListWidgetItem *ListNoteItem::getListWidgetItem()
 {
     return this->item;
@@ -61,6 +64,7 @@ void ListNoteItem::on_contentChanged()
     ui->browserNoteContent->setPlainText(headLines);
 }
 
+// only show buttons when mouse is hovering over
 void ListNoteItem::enterEvent(QEnterEvent *event)
 {
     Q_UNUSED(event);
