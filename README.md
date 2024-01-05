@@ -1,6 +1,10 @@
 > A desktop sticky notes application developed in C++ with [Qt-Widget](https://www.qt.io/download-open-source).
 
+# Demonstration
+
 ![illustration](https://github.com/MapleBKL/sticky-notes/blob/master/demo-images/illustration.png)
+
+![gif demo](https://github.com/MapleBKL/sticky-notes/blob/master/demo-images/demo-video.gif)
 
 # Background
 
@@ -39,7 +43,9 @@ This section lists all the implemented features. For other features I plan to im
 
 This section lists unfinished tasks and additional features I plan to implement later.
 
-- Automatically save notes to a database, so that they can be re-opened later.
+- Style the scroll bar of the list in the central panel.
+
+- Automatically save notes to a database (sqlite), so that they can be re-opened later.
   
 - Search for note content.
   
