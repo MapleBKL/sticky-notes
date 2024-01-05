@@ -11,6 +11,9 @@ ListNoteItem::ListNoteItem(QWidget *parent)
     // the open and delete buttons are inititally hidden
     ui->btnOpen->setVisible(false);
     ui->btnDelete->setVisible(false);
+
+    // update date label
+    set_labelDate();
 }
 
 ListNoteItem::~ListNoteItem()
@@ -26,6 +29,12 @@ void ListNoteItem::setListWidgetItem(QListWidgetItem *item)
 QListWidgetItem *ListNoteItem::getListWidgetItem()
 {
     return this->item;
+}
+
+void ListNoteItem::set_labelDate()
+{
+    QString date = QDate::currentDate().toString("MM/dd/yyyy");
+    ui->labelDate->setText(date);
 }
 
 void ListNoteItem::on_contentChanged()

@@ -3,6 +3,7 @@
 
 #include <QListWidgetItem>
 #include <QWidget>
+#include <QDate>
 #include <QMessageBox>
 
 namespace Ui {
@@ -23,6 +24,8 @@ public:
 private:
     Ui::ListNoteItem* ui;
     QListWidgetItem* item;
+
+    void set_labelDate();
 
 signals:
     void delete_confirmed(ListNoteItem* item);

@@ -117,9 +117,9 @@ QMessageBox QPushButton {
   <widget class="QLabel" name="labelDate">
    <property name="geometry">
     <rect>
-     <x>224</x>
+     <x>204</x>
      <y>1</y>
-     <width>60</width>
+     <width>80</width>
      <height>16</height>
     </rect>
    </property>
